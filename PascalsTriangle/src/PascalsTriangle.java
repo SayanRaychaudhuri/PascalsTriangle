@@ -30,15 +30,12 @@ public class PascalsTriangle {
 		return nCk;
 	}
 	
-	public int factorial(int number) {
-		int value = 1;
-		int factorial = 1;
-		if (number>=0) {
-			for(int i=1;i<=number;i++) {
-				factorial = factorial*i;
-				if (i==number) {
-					value = factorial;
-				}
+	public int factorial(int n) {
+		if (n>=0) {
+			if (n==0){
+				return 1;
+			} else {
+				return n * factorial(n-1);
 			}
 		} else {
 			try {
@@ -47,7 +44,7 @@ public class PascalsTriangle {
 				e.printStackTrace();
 			}
 		}
-		return value;
+		return -1;
 	}
 	
 	public String showTriangle() {
